@@ -1,0 +1,353 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.15;
+}
+
+li {
+  list-style: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+#app {
+  height: 100vh;
+  padding: 5vh 10vw;
+  background: blue;
+  overflow-y: hidden;
+}
+
+.container {
+  height: 100%;
+  position: relative;
+}
+
+.title-bar {
+  height: 20px;
+}
+
+.window-body {
+  height: calc(100% - 20px);
+  margin: 0 !important;
+}
+
+/* 헤더 영역 */
+header {
+  height: 50px;
+  .header-container {
+    padding-block: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    vertical-align: middle;
+
+    h1 {
+      font-size: 1.5rem !important;
+      color: rgba(240, 248, 255, 0);
+      user-select: none;
+      background-image: url("/로고.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .clock {
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+    }
+  }
+}
+
+/* 투두 컨테이너 */
+.todo-container {
+  height: calc(100% - 50px);
+  display: flex;
+}
+
+/* 투두 폼 컨테이너 */
+.todoform-container {
+  width: 20%;
+  padding: 10px;
+
+  input[type="text"],
+  input[type="date"],
+  textarea {
+    width: 100%;
+    margin-top: 7px;
+  }
+
+  button,
+  fieldset {
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  button,
+  input[type="date"] {
+    cursor: pointer;
+  }
+
+  textarea {
+    resize: none;
+    height: 15vh;
+  }
+
+  fieldset div {
+    margin-bottom: 7px;
+  }
+
+  p {
+    margin-top: 5px;
+    text-align: right;
+    height: 15px;
+  }
+
+  .input-information {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .title-info,
+  .date-info {
+    margin-top: 5px;
+    color: rgb(255, 36, 36);
+    text-align: left;
+  }
+}
+
+.todolist-container {
+  height: 100%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 투두 솔팅 메뉴 */
+
+.sorting-container {
+  height: 30px;
+
+  .sorting-inner {
+    display: flex;
+    justify-content: flex-end;
+  }
+  button {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 2px;
+    display: none;
+  }
+  .sorting-menu {
+    justify-content: flex-end;
+    p {
+      font-size: 12px;
+      text-align: center;
+      width: 60px;
+      padding: 6px;
+      cursor: pointer;
+    }
+  }
+}
+
+/* 투두 리스트 */
+
+.todolist {
+  height: calc(100% - 30px);
+  width: 100%;
+  overflow: auto;
+  padding: 5px;
+}
+
+/* 투두 카드 */
+.todo-card {
+  float: left;
+  margin: 5px;
+  width: calc(33% - 10px);
+  height: 120px;
+
+  .window-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 25px;
+    height: calc(100% - 20px);
+  }
+
+  .content-box {
+    flex-grow: 1;
+    overflow: hidden;
+
+    p,
+    s {
+      display: block;
+      padding-inline: 10px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    p:nth-child(1),
+    s {
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+
+  .expiring-date {
+    text-align: right;
+  }
+
+  .expiring-date,
+  .valid-date {
+    padding: 5px 10px;
+  }
+}
+
+.popup {
+  width: 600px !important;
+  z-index: 999;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.delete-popup {
+  width: 300px;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .window-body {
+    padding: 4px 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .field-row {
+    justify-content: flex-end;
+  }
+}
+
+/* 팝업 컨테이너 */
+.popup-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 998;
+  top: 0;
+  left: 0;
+
+  .memo-popup {
+    position: absolute;
+    width: 20%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+  }
+  .todoform-container {
+    width: 100%;
+  }
+  .fix-form {
+    display: block;
+  }
+  .submit-form {
+    display: none;
+  }
+}
+
+.fix-form {
+  display: none;
+}
+
+.hide {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .memo-popup {
+    width: 30% !important;
+  }
+  .todo-container {
+    .todoform-container {
+      width: 25%;
+      fieldset,
+      button {
+        margin-block: 5px;
+      }
+    }
+    .todolist-container {
+      width: 75%;
+    }
+  }
+  .todolist {
+    .todo-card {
+      width: calc(50% - 10px);
+    }
+  }
+}
+
+.moblie {
+  width: 100%;
+  height: 30px;
+}
+
+@media (max-width: 992px) {
+  .memo-popup {
+    width: 35% !important;
+  }
+  p {
+    font-size: 9px;
+  }
+  .todo-title {
+    font-size: 13px !important;
+  }
+  .clock {
+    font-size: 14px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .sorting-container {
+    .sorting-inner {
+      justify-content: space-between;
+    }
+    button {
+      display: block;
+    }
+  }
+  .memo-popup {
+    width: 40% !important;
+  }
+  .container {
+    .todoform-container {
+      display: none;
+    }
+  }
+  .todolist-container {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .memo-popup {
+    width: 50% !important;
+  }
+  .sorting-menu {
+    p {
+      font-size: 10px !important;
+    }
+  }
+  .todolist {
+    .todo-card {
+      width: calc(100% - 10px);
+    }
+  }
+}
