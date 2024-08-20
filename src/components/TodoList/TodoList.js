@@ -1,8 +1,8 @@
 import Component from "../Core/Core";
-import DeletePopup from "@components/Popup/DeletePopup";
+import DeletePopup from "./components/Popup/DeletePopup";
 import todoCard from "./TodoCard";
 import TodoForm from "../TodoForm/TodoForm";
-import popupFormTemplate from "@components/Popup/MemoPopup";
+import popupFormTemplate from "./components/Popup/MemoPopup";
 
 export default class TodoList extends Component {
   setup() {

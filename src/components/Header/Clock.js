@@ -1,5 +1,5 @@
 import Component from "../Core/Core";
-import getCurrentTime from "@utils/getCurrentTime";
+import getCurrentTime from "../../utils/getCurrentTime.js";
 
 export default class Clock extends Component {
   setup() {
