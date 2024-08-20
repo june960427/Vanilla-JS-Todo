@@ -1,8 +1,8 @@
-import Component from "../Core/Core";
-import DeletePopup from "./components/Popup/DeletePopup";
-import todoCard from "./TodoCard";
-import TodoForm from "../TodoForm/TodoForm";
-import popupFormTemplate from "./components/Popup/MemoPopup";
+import Component from "../Core/Core.js";
+import DeletePopup from "../Popup/DeletePopup.js";
+import todoCard from "./TodoCard.js";
+import TodoForm from "../TodoForm/TodoForm.js";
+import popupFormTemplate from "../Popup/MemoPopup.js";
 
 export default class TodoList extends Component {
   setup() {

@@ -1,4 +1,4 @@
-import Component from "../Core/Core";
+import Component from "../Core/Core.js";
 import getCurrentTime from "../../utils/getCurrentTime.js";
 
 export default class Clock extends Component {

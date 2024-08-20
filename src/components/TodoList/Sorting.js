@@ -1,4 +1,4 @@
-import Component from "../Core/Core";
+import Component from "../Core/Core.js";
 
 export default class Sorting extends Component {
   setup() {

@@ -1,8 +1,8 @@
-import Component from "../Core/Core";
-import DateInput from "./DateInput";
-import ImportanceCheckInput from "./ImportanceCheckInput";
-import MemoInput from "./MemoInput";
-import TitleInput from "./TitleInput";
+import Component from "../Core/Core.js";
+import DateInput from "./DateInput.js";
+import ImportanceCheckInput from "./ImportanceCheckInput.js";
+import MemoInput from "./MemoInput.js";
+import TitleInput from "./TitleInput.js";
 
 export default class TodoForm extends Component {
   setup() {

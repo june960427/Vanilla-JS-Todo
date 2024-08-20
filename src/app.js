@@ -1,9 +1,9 @@
 import Component from "./components/Core/Core.js";
 import Header from "./components/Header/Header.js";
 import TodoForm from "./components/TodoForm/TodoForm.js";
-import TodoList from "./components/TodoList/TodoList";
-import Sorting from "./components/Todolist/Sorting";
-import popupFormTemplate from "./components/Popup/MemoPopup";
+import TodoList from "./components/TodoList/TodoList.js";
+import Sorting from "./components/Todolist/Sorting.js";
+import popupFormTemplate from "./components/Popup/MemoPopup.js";
 
 export default class App extends Component {
   setup() {

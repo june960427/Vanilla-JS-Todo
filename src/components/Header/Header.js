@@ -1,4 +1,4 @@
-import Component from "../Core/Core";
+import Component from "../Core/Core.js";
 import Clock from "./Clock.js";
 
 export default class Header extends Component {
